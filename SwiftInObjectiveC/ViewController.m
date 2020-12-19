@@ -6,6 +6,8 @@
 //
 
 #import "ViewController.h"
+#import "SwiftInObjectiveC-Swift.h"
+#import "MockLoginEndPoint.h"
 
 @interface ViewController ()
 
@@ -15,7 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    MockLoginEndPoint *mockEndPoint = [[MockLoginEndPoint alloc] init:@"https://stackoverflow.com" parameters:nil];
+    
+    MockAPIClient *client = [MockAPIClient new];
+    [client executeRequestWith:mockEndPoint];
     // Do any additional setup after loading the view.
+    
 }
 
 
